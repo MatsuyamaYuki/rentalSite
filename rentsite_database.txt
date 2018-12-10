@@ -1,7 +1,7 @@
 CREATE database rentsite_database;
 
 
-USE rentsite_rentsite_database;
+USE rentsite_database;
 CREATE TABLE `stock` (
   `id` INTEGER NULL AUTO_INCREMENT,
   `name` INTEGER NULL DEFAULT NULL,
