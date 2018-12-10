@@ -1,6 +1,7 @@
 package jp.ken.stockController;
 
-import
+import org.springframework.stereotype.Controller;
+
 
 @Controller
 public class StockController {
