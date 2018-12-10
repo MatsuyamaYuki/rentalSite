@@ -10,6 +10,6 @@
 <title>在庫管理</title>
 </head>
 <body>
-
+stock
 </body>
 </html>
