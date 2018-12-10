@@ -2,24 +2,33 @@ package jp.ken.rentalSite.model;
 
 import java.io.Serializable;
 
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.NotEmpty;
+
+@SuppressWarnings("deprecation")
 public class UserInformationModel implements Serializable {
 
-	private String userID;
+	@NotEmpty(groups=ErrorCheckGroup1.class, message="メールアドレスを入力してください")
+	@Email(groups=ErrorCheckGroup1.class,message="メールアドレスではありません")
+	private String userMail;
+	@NotEmpty(groups=ErrorCheckGroup1.class, message="パスワードを入力してください")
 	private String userPassword;
 	private String plan;
+	@NotEmpty(groups=ErrorCheckGroup1.class, message="郵便番号を入力してください")
 	private String zip;
 	private String userAddress;
+
 	private String userTel;
 	private String userName;
 	private String userBirthday;
 	private String cardNumber;
 	private String gender;
 
-	public String getUserID() {
-		return userID;
+	public String getUserMail() {
+		return userMail;
 	}
-	public void setUserID(String userID) {
-		this.userID = userID;
+	public void setUserMail(String userMail) {
+		this.userMail = userMail;
 	}
 	public String getUserPassword() {
 		return userPassword;
