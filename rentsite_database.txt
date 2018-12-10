@@ -1,4 +1,4 @@
-DROP database rentsite_database;
+CREATE database rentsite_database;
 
 
 USE rentsite_rentsite_database;
