@@ -1,0 +1,106 @@
+﻿CREATE database rentsite_database;
+USE rentsite_database;
+CREATE TABLE `stock` (
+  `id` INTEGER NULL AUTO_INCREMENT DEFAULT NULL,
+  `name` INTEGER NULL DEFAULT NULL,
+  `stock_count` INTEGER NOT NULL DEFAULT 10,
+  `new_or_old` TINYINT NULL DEFAULT 0 COMMENT '1 = 新作,2=旧作',
+  `type` TINYINT NOT NULL DEFAULT 1 COMMENT '1=CD,2=DVD,3=Blue-ray',
+  `Artist` INT NOT NULL DEFAULT 0,
+  `manager` INTEGER NOT NULL DEFAULT 0,
+  `registration` DATE NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+);
+
+CREATE TABLE `stock_name` (
+  `id` INTEGER NULL AUTO_INCREMENT DEFAULT NULL,
+  `name` CHAR NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+);
+
+		
+CREATE TABLE `new_or_old` (
+  `id` INTEGER NULL AUTO_INCREMENT DEFAULT NULL,
+  `type` CHAR NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+);
+
+		
+CREATE TABLE `type` (
+  `id` INTEGER NULL AUTO_INCREMENT DEFAULT NULL,
+  `name` CHAR NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+);
+		
+CREATE TABLE `artist` (
+  `id` INTEGER NULL AUTO_INCREMENT DEFAULT NULL,
+  `name` CHAR NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+);
+
+		
+CREATE TABLE `manager` (
+  `id` INTEGER NULL AUTO_INCREMENT DEFAULT NULL,
+  `name` CHAR NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+);
+
+		
+CREATE TABLE `userInformation` (
+  `id` INTEGER NULL AUTO_INCREMENT DEFAULT NULL,
+  `Password` INTEGER NULL DEFAULT NULL,
+  `plan` INTEGER NULL DEFAULT NULL COMMENT '1=お試し,2=Bronze,3=silver,4=Gold',
+  `zip` INTEGER NULL DEFAULT NULL,
+  `address` CHAR NULL DEFAULT NULL,
+  `tel` INTEGER NULL DEFAULT NULL,
+  `name` CHAR NULL DEFAULT NULL,
+  `birthday` DATE NULL DEFAULT NULL,
+  `cardnumber` INTEGER NULL DEFAULT NULL,
+  `gender` INTEGER NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+);
+
+		
+CREATE TABLE `plan` (
+  `id` INTEGER NULL AUTO_INCREMENT DEFAULT NULL,
+  `name` CHAR NULL DEFAULT NULL,
+  `price` INTEGER NULL DEFAULT NULL,
+  `max` INTEGER NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+);
+
+		
+CREATE TABLE `zip` (
+  `id` INTEGER NULL AUTO_INCREMENT DEFAULT NULL,
+  PRIMARY KEY (`id`)
+);
+
+		
+CREATE TABLE `gender` (
+  `id` INTEGER NULL AUTO_INCREMENT DEFAULT NULL,
+  `gender` CHAR NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+);
+
+		
+CREATE TABLE `history` (
+  `id` INTEGER NULL AUTO_INCREMENT DEFAULT NULL,
+  `userID` INTEGER NULL DEFAULT NULL,
+  `rent_day` DATE NULL DEFAULT NULL,
+  `return_day` DATE NULL DEFAULT NULL,
+  `many` INTEGER NULL DEFAULT NULL,
+  `item_name` INTEGER NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+);
+
+
+ALTER TABLE `stock` ADD FOREIGN KEY (name) REFERENCES `stock_name` (`id`);
+ALTER TABLE `stock` ADD FOREIGN KEY (new_or_old) REFERENCES `new_or_old` (`id`);
+ALTER TABLE `stock` ADD FOREIGN KEY (type) REFERENCES `type` (`id`);
+ALTER TABLE `stock` ADD FOREIGN KEY (Artist) REFERENCES `artist` (`id`);
+ALTER TABLE `stock` ADD FOREIGN KEY (manager) REFERENCES `manager` (`id`);
+ALTER TABLE `userInformation` ADD FOREIGN KEY (plan) REFERENCES `plan` (`id`);
+ALTER TABLE `userInformation` ADD FOREIGN KEY (zip) REFERENCES `zip` (`id`);
+ALTER TABLE `userInformation` ADD FOREIGN KEY (gender) REFERENCES `gender` (`id`);
+ALTER TABLE `history` ADD FOREIGN KEY (userID) REFERENCES `userInformation` (`id`);
+ALTER TABLE `history` ADD FOREIGN KEY (item_name) REFERENCES `stock` (`id`);
