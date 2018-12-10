@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 public class UserInformationModel implements Serializable {
 
+	private String userID;
 	private String userPassword;
 	private String plan;
 	private String zip;
@@ -14,6 +15,12 @@ public class UserInformationModel implements Serializable {
 	private String cardNumber;
 	private String gender;
 
+	public String getUserID() {
+		return userID;
+	}
+	public void setUserID(String userID) {
+		this.userID = userID;
+	}
 	public String getUserPassword() {
 		return userPassword;
 	}
