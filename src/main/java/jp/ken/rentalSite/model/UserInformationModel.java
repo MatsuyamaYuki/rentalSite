@@ -2,11 +2,10 @@ package jp.ken.rentalSite.model;
 
 import java.io.Serializable;
 
+import javax.validation.constraints.Pattern;
+
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
-
-import jp.ken.rentalSite.annotation.TelCheck;
-import jp.ken.rentalSite.annotation.ZipCheck;
 
 @SuppressWarnings("deprecation")
 public class UserInformationModel implements Serializable {
@@ -18,11 +17,13 @@ public class UserInformationModel implements Serializable {
 	private String userPassword;
 	private String plan;
 	@NotEmpty(groups=ErrorCheckGroup1.class, message="郵便番号を入力してください")
-	@ZipCheck(message="正しい郵便番号を入力してください")
+	@Pattern(regexp="^\\d{7}",message="正しい郵便番号を入力してください")
 	private String zip;
 	private String userAddress;
-	@TelCheck(message="正しい電話番号を入力してください")
+	@NotEmpty(message="電話番号を入力してください")
+	@Pattern(regexp="^\\d{9,11}$",message="正しい電話番号を入力してください")
 	private String userTel;
+	@NotEmpty
 	private String userName;
 	private String userBirthday;
 	private String cardNumber;
