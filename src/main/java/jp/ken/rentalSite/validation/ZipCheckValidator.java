@@ -3,12 +3,12 @@ package jp.ken.rentalSite.validation;
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 
-import jp.ken.rentalSite.annotation.TelCheck;
+import jp.ken.rentalSite.annotation.ZipCheck;
 
-public class ZipCheckValidator implements ConstraintValidator<TelCheck,String>{
+public class ZipCheckValidator implements ConstraintValidator<ZipCheck,String>{
 
 	@Override
-	public void initialize(TelCheck arg0) {}
+	public void initialize(ZipCheck arg0) {}
 
 	@Override
 	public boolean isValid(String value, ConstraintValidatorContext cxt) {

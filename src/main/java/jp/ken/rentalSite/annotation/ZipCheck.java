@@ -11,19 +11,16 @@ import javax.validation.Payload;
 
 import jp.ken.rentalSite.validation.ZipCheckValidator;
 
-public class ZipCheck {
+@Documented
+@Constraint(validatedBy=ZipCheckValidator.class)
+@Target({ElementType.FIELD})
+@Retention(RetentionPolicy.RUNTIME)
+public @interface ZipCheck {
 
-	@Documented
-	@Constraint(validatedBy = ZipCheckValidator.class)
-	@Target(ElementType.FIELD)
-	@Retention(RetentionPolicy.RUNTIME)
-	public @interface TelCheck {
+	String message() default "";
 
-		String message() default "";
+	Class<?>[] groups() default {};
 
-		Class<?>[] groups() default {};
+	Class<? extends Payload>[] payload() default {};
 
-		Class<? extends Payload>[] payload() default {};
-
-}
 }
