@@ -1,4 +1,4 @@
-package jp.ken.rentalSite.model;
+package jp.ken.rentalSite.annotation;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
