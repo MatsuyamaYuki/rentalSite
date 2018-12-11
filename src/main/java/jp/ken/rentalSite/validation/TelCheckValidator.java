@@ -12,11 +12,11 @@ public class TelCheckValidator implements ConstraintValidator<TelCheck,String>{
 
 	@Override
 	public boolean isValid(String value, ConstraintValidatorContext cxt) {
-		return isZipNumber(value);
+		return isTelNumber(value);
 	}
 
-	private boolean isZipNumber(String zipNumber) {
-		if(zipNumber.matches("^[0-9]{7}$")) {
+	private boolean isTelNumber(String zipNumber) {
+		if(zipNumber.matches("^0\\d{9,10}$")) {
 			return true;
 		}else {
 			return false;
