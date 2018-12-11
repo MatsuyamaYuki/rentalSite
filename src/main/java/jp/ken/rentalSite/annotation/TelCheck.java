@@ -9,6 +9,8 @@ import java.lang.annotation.Target;
 import javax.validation.Constraint;
 import javax.validation.Payload;
 
+import jp.ken.rentalSite.validation.TelCheckValidator;
+
 @Documented
 @Constraint(validatedBy = TelCheckValidator.class)
 @Target(ElementType.FIELD)
