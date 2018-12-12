@@ -1,4 +1,4 @@
-package entity;
+package jp.ken.rentalSite.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

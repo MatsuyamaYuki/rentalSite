@@ -6,7 +6,7 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
-import entity.Stock;
+import jp.ken.rentalSite.entity.Stock;
 
 public class StockDAOImpl implements StockDAO<Stock> {
 
