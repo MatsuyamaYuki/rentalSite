@@ -27,7 +27,13 @@ public class UserInformationModel implements Serializable {
 	@NotEmpty
 	private String userName;
 	private String userBirthday;
+	private String year;
+	private String month;
+	private String day;
+	private String cardName;
 	private String cardNumber;
+	private String cardMonth;
+	private String cardYear;
 	private String gender;
 
 	public String getUserMail() {
@@ -78,11 +84,47 @@ public class UserInformationModel implements Serializable {
 	public void setUserBirthday(String userBirthday) {
 		this.userBirthday = userBirthday;
 	}
+	public String getYear() {
+		return year;
+	}
+	public String getMonth() {
+		return month;
+	}
+	public String getDay() {
+		return day;
+	}
+	public void setYear(String year) {
+		this.year = year;
+	}
+	public void setMonth(String month) {
+		this.month = month;
+	}
+	public void setDay(String day) {
+		this.day = day;
+	}
 	public String getCardNumber() {
 		return cardNumber;
 	}
 	public void setCardNumber(String cardNumber) {
 		this.cardNumber = cardNumber;
+	}
+	public String getCardName() {
+		return cardName;
+	}
+	public String getCardMonth() {
+		return cardMonth;
+	}
+	public String getCardYear() {
+		return cardYear;
+	}
+	public void setCardName(String cardName) {
+		this.cardName = cardName;
+	}
+	public void setCardMonth(String cardMonth) {
+		this.cardMonth = cardMonth;
+	}
+	public void setCardYear(String cardYear) {
+		this.cardYear = cardYear;
 	}
 	public String getGender() {
 		return gender;
