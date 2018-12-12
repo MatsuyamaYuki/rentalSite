@@ -8,8 +8,39 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>在庫管理画面</title>
+<style type="text/css">
+.menu{
+  display:block;
+  width:300px;
+  padding-top:10px;
+  padding-bottom:10px;
+  text-align:center;
+  border:2px solid;
+  border-color:#aaaaaa #4444444 #4444444 #aaaaaa;
+  text-decoration;
+  font-color:#444444;
+}
+.menu:hover{
+  background:#ffcccc;
+}
+.menu:link{
+  color:#000000;
+}
+.menu:visited{
+  color:#000000;
+}
+</style>
 </head>
 <body>
-
+  <h1>在庫管理システム</h1>
+  <hr/>
+  <div>
+    <table>
+    <tr><td><a href="stockList" class="menu">在庫一覧</a></td></tr>
+    <tr><td><a href="stockSelect" class="menu">在庫検索</a></td></tr>
+    <tr><td><a href="regist" class="menu">在庫登録</a></td></tr>
+    <tr><td><a href="change" class="menu">在庫変更/削除</a></td></tr>
+    </table>
+  </div>
 </body>
 </html>
