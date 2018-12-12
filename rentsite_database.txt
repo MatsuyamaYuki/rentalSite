@@ -1,0 +1,106 @@
+﻿	CREATE database rentsite_database;
+	USE rentsite_database;
+	CREATE TABLE `stock` (
+	  `id` INTEGER NULL AUTO_INCREMENT ,
+	  `name` INTEGER NULL ,
+	  `stock_count` INTEGER NOT NULL DEFAULT 10,
+	  `new_or_old` TINYINT NULL DEFAULT 0 COMMENT '1 = 新作,2=旧作',
+	  `type` TINYINT NOT NULL DEFAULT 1 COMMENT '1=CD,2=DVD,3=Blue-ray',
+	  `Artist` INT NOT NULL DEFAULT 0,
+	  `manager` INTEGER NOT NULL DEFAULT 0,
+	  `registration` DATE NULL ,
+	  PRIMARY KEY (`id`)
+	);
+
+	CREATE TABLE `stock_name` (
+	  `id` INTEGER NULL AUTO_INCREMENT ,
+	  `name` CHAR(100) ,
+	  PRIMARY KEY (`id`)
+	);
+
+			
+	CREATE TABLE `new_or_old` (
+	  `id` INTEGER NULL AUTO_INCREMENT ,
+	  `type` CHAR(10) ,
+	  PRIMARY KEY (`id`)
+	);
+
+			
+	CREATE TABLE `type` (
+	  `id` INTEGER NULL AUTO_INCREMENT ,
+	  `name` CHAR(10) ,
+	  PRIMARY KEY (`id`)
+	);
+			
+	CREATE TABLE `artist` (
+	  `id` INTEGER NULL AUTO_INCREMENT ,
+	  `name` CHAR(10) ,
+	  PRIMARY KEY (`id`)
+	);
+
+			
+	CREATE TABLE `manager` (
+	  `id` INTEGER NULL AUTO_INCREMENT ,
+	  `name` CHAR(10) ,
+	  PRIMARY KEY (`id`)
+	);
+
+			
+	CREATE TABLE `userInformation` (
+	  `id` INTEGER NULL AUTO_INCREMENT ,
+	  `Password` INTEGER NULL ,
+	  `plan` INTEGER NULL  COMMENT '1=お試し,2=Bronze,3=silver,4=Gold',
+	  `zip` INTEGER NULL ,
+	  `address` CHAR(10) ,
+	  `tel` INTEGER NULL ,
+	  `name` CHAR(10) ,
+	  `birthday` DATE NULL ,
+	  `cardnumber` INTEGER NULL ,
+	  `gender` INTEGER NULL ,
+	  PRIMARY KEY (`id`)
+	);
+
+			
+	CREATE TABLE `plan` (
+	  `id` INTEGER NULL AUTO_INCREMENT ,
+	  `name` CHAR(10) ,
+	  `price` INTEGER NULL ,
+	  `max` INTEGER NULL ,
+	  PRIMARY KEY (`id`)
+	);
+
+			
+	CREATE TABLE `zip` (
+	  `id` INTEGER NULL AUTO_INCREMENT ,
+	  PRIMARY KEY (`id`)
+	);
+
+			
+	CREATE TABLE `gender` (
+	  `id` INTEGER NULL AUTO_INCREMENT ,
+	  `gender` CHAR(10) ,
+	  PRIMARY KEY (`id`)
+	);
+
+			
+	CREATE TABLE `history` (
+	  `id` INTEGER NULL AUTO_INCREMENT ,
+	  `userID` INTEGER NULL ,
+	  `rent_day` DATE NULL ,
+	  `return_day` DATE NULL ,
+	  `many` INTEGER NULL ,
+	  `item_name` INTEGER NULL ,
+	  PRIMARY KEY (`id`)
+	);
+
+
+	ALTER TABLE `stock` ADD FOREIGN KEY (name) REFERENCES `stock_name` (`id`);
+	ALTER TABLE `stock` ADD FOREIGN KEY (new_or_old) REFERENCES `new_or_old` (`id`);
+	ALTER TABLE `stock` ADD FOREIGN KEY (type) REFERENCES `type` (`id`);
+	ALTER TABLE `stock` ADD FOREIGN KEY (Artist) REFERENCES `artist` (`id`);
+	ALTER TABLE `stock` ADD FOREIGN KEY (manager) REFERENCES `manager` (`id`);
+	ALTER TABLE `userInformation` ADD FOREIGN KEY (plan) REFERENCES `plan` (`id`);
+	ALTER TABLE `userInformation` ADD FOREIGN KEY (zip) REFERENCES `zip` (`id`);
+	ALTER TABLE `userInformation` ADD FOREIGN KEY (gender) REFERENCES `gender` (`id`);
+	ALTER TABLE `history` ADD FOREIGN KEY (userID) REFERENCES `userInformation` (`id`);
+	ALTER TABLE `history` ADD FOREIGN KEY (item_name) REFERENCES `stock` (`id`);
