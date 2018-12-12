@@ -1,4 +1,4 @@
-package jp.ken.rentalSite.userInformation.controller;
+package jp.ken.rentalSite;
 
 import javax.validation.GroupSequence;
 import javax.validation.groups.Default;
