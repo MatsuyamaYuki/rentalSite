@@ -1,0 +1,24 @@
+﻿ALTER TABLE rentsite_database.userinformation ADD mailaddress char after id ;
+
+INSERT rentsite_database.gender value(1,"男");
+INSERT rentsite_database.gender value(2,"女");
+
+INSERT rentsite_database.new_or_old value(1,"新作");
+INSERT rentsite_database.new_or_old value(2,"旧作");
+
+INSERT rentsite_database.plan value(1,"お試しプラン",315,2);
+INSERT rentsite_database.plan value(2,"Bronze プラン",1050,6);
+INSERT rentsite_database.plan value(3,"Silver プラン",2100,12);
+INSERT rentsite_database.plan value(4,"Gold プラン",5250,9999);
+
+DROP TABLE rentsite_database.artist;
+DROP TABLE rentsite_database.gender;
+DROP TABLE rentsite_database.history;
+DROP TABLE rentsite_database.manager;
+DROP TABLE rentsite_database.new_or_old;
+DROP TABLE rentsite_database.plan;
+DROP TABLE rentsite_database.stock;
+DROP TABLE rentsite_database.stock_name;
+DROP TABLE rentsite_database.type;
+DROP TABLE rentsite_database.userinformation;
+DROP TABLE rentsite_database.zip;
