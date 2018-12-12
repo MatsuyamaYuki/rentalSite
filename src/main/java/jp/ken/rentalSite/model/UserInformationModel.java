@@ -14,6 +14,8 @@ public class UserInformationModel implements Serializable {
 	@Email(groups=ErrorCheckGroup1.class,message="メールアドレスではありません")
 	private String userMail;
 	@NotEmpty(groups=ErrorCheckGroup1.class, message="パスワードを入力してください")
+	@Pattern(regexp="/^[a-z\\d]{8,32}$/i", message="パスワードは8文字以上、32文字以下にしてください")
+	@Pattern(regexp="/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?\\d)$/i",message="パスワードには半角大文字英字、半角英字、半角数字を含める必要があります。")
 	private String userPassword;
 	private String plan;
 	@NotEmpty(groups=ErrorCheckGroup1.class, message="郵便番号を入力してください")
