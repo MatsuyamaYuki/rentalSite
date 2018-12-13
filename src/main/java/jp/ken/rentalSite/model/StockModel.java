@@ -8,6 +8,7 @@ public class StockModel implements Serializable {
 
 	@NotEmpty(groups=ErrorCheckGroup1.class,message="名前を省略することはできません")
 	private String stockName;
+	@NotEmpty(groups=ErrorCheckGroup1.class,message="個数を省略することはできません")
 	private String stockCount;
 	private String newOrOld;
 	private String stockType;

@@ -11,20 +11,23 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import dao.StockDAO;
 import jp.ken.rentalSite.entity.Stock;
+import jp.ken.rentalSite.model.StockModel;
 
 @Controller
-public class StockListController {
-
+@RequestMapping("change")
+public class StockChangeController {
 	private static ApplicationContext context=new ClassPathXmlApplicationContext("stockSpring.xml");
 
 	@SuppressWarnings("unchecked")
 	private static StockDAO<Stock> stoDAO=(StockDAO<Stock>)context.getBean("stockDAO");
 
-	@RequestMapping(value="/stoList",method=RequestMethod.GET)
-	public String stoList(Model model) {
+	@RequestMapping(method=RequestMethod.GET)
+	public String changeList(Model model) {
+	    StockModel sModel=new StockModel();
+	    model.addAttribute("stockModel",sModel);
 		List<Stock>list=stoDAO.allList();
 		model.addAttribute("message","在庫リスト");
-		model.addAttribute("stoList",list);
-		return "listStockData";
+		model.addAttribute("changeStockList",list);
+		return "changeStockData";
 	}
 }

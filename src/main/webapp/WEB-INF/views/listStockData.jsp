@@ -16,8 +16,8 @@
 <hr/>
 <c:if test="${stockList!=null}">
 <table border="1">
-  <tr><th>在庫 ID</th><th>商品名</th><th>在庫数</th><th>新作旧作</th>
-  <th>種類</th><th>アーティスト名</th><th>監督名</th></tr>
+  <tr><th>在庫ID</th><th>商品名</th><th>在庫数</th><th>新作旧作</th>
+  <th>分類</th><th>アーティスト名</th><th>監督名</th></tr>
    <c:forEach var="sto" items="${stockList}">
      <tr>
        <td><c:out value="${sto.stock_id}"/></td>
