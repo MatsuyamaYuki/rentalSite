@@ -1,4 +1,4 @@
-package jp.ken.rentalsite.model;
+package jp.ken.rentalSite.model;
 
 import java.io.Serializable;
 
@@ -30,11 +30,16 @@ public class UserInformationModel implements Serializable {
 	private String year;
 	private String month;
 	private String day;
+	@Pattern(regexp="/^[A-Z]+\\s[A-Z]+$",message="TANAKA TAROの形式で入力してください")
 	private String cardName;
+	@Pattern(regexp="/^(?:4[0-9]{12}(?:[0-9]{3})?|5[1-5][0-9]{14}|6011[0-9]{12}|3(?:0[0-5]|[68][0-9])[0-9]{11}|3[47][0-9]{13}|(?:2131|1800|35[0-9]{3})[0-9]{11})$/",message="正しいクレジットカード番号を入力してください")
 	private String cardNumber;
+	@Pattern(regexp="/^[0-9] {2}",message="2桁の半角数字で入力してください")
 	private String cardMonth;
+	@Pattern(regexp="/^[0-9] {2}",message="2桁の半角数字で入力してください")
 	private String cardYear;
 	private String gender;
+	private String[] planLists;
 
 	public String getUserMail() {
 		return userMail;
@@ -131,5 +136,11 @@ public class UserInformationModel implements Serializable {
 	}
 	public void setGender(String gender) {
 		this.gender = gender;
+	}
+	public String[] getPlanLists() {
+		return planLists;
+	}
+	public void setPlanLists(String[] planLists) {
+		this.planLists = planLists;
 	}
 }
