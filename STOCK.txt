@@ -1,0 +1,94 @@
+DROP TABLE rentsite_database.stock;
+CREATE TABLE `stock` (
+
+	  `stock_id` INTEGER  AUTO_INCREMENT ,
+	  `stock_name`  VARCHAR(30) NOT NULL,
+	  `stock_artist` VARCHAR(30) NOT NULL,
+	`stock_type` CHAR(10) NOT NULL,
+	  `stock_manager` VARCHAR(30) NOT NULL,
+	  `new_or_old` CHAR(5) NOT NULL,
+	`stock_count` INTEGER NOT NULL DEFAULT 10,	
+	`rent`INTEGER NOT NULL DEFAULT 0,
+	  `registration` TIMESTAMP DEFAULT CURRENT_TIMESTAMP()  NOT NULL ,
+	  PRIMARY KEY (`stock_id`)
+
+	);
+
+INSERT INTO stock(stock_name,stock_artist,stock_type,stock_manager,new_or_old,stock_count,rent)
+VALUES ("9999(DVD•t)","THE YELLOW MONKEY","CD"," ","Vì",10,0);
+INSERT INTO stock(stock_name,stock_artist,stock_type,stock_manager,new_or_old,stock_count,rent)
+VALUES ("Lip(DVD•t)","‚r‚d‚j‚`‚h ‚m‚n ‚n‚v‚`‚q‚h","CD"," ","Vì",10,0);
+INSERT INTO stock(stock_name,stock_artist,stock_type,stock_manager,new_or_old,stock_count,rent)
+VALUES ("Eye(DVD•t)","‚r‚d‚j‚`‚h ‚m‚n ‚n‚v‚`‚q‚h","CD"," ","Vì",10,5);
+INSERT INTO stock(stock_name,stock_artist,stock_type,stock_manager,new_or_old,stock_count,rent)
+VALUES ("ƒzƒƒ`ƒMƒŠƒXƒg/‚¾‚ç‚¯‚Ìˆ¤iAj(DVD•t)","ƒWƒƒƒj[ƒY‚v‚d‚r‚s","CD"," ","Vì",10,7);
+INSERT INTO stock(stock_name,stock_artist,stock_type,stock_manager,new_or_old,stock_count,rent)
+VALUES ("‚¾‚ç‚¯‚Ìˆ¤/ƒzƒƒ`ƒMƒŠƒXƒgiBj(DVD•t)","ƒWƒƒƒj[ƒY‚v‚d‚r‚s","CD"," ","Vì",10,9);
+INSERT INTO stock(stock_name,stock_artist,stock_type,stock_manager,new_or_old,stock_count,rent)
+VALUES ("Thanks@Two@you(DVD•t)","ƒ^ƒbƒL[•—ƒ","CD"," ","Vì",10,8);
+INSERT INTO stock(stock_name,stock_artist,stock_type,stock_manager,new_or_old,stock_count,rent)
+VALUES ("‚³‚æ‚È‚ç‚²‚Á‚±(DVD•t)","‚‚‚‚š‚‚’‚‚“‚ˆ‚‰","CD"," ","Vì",10,7);
+INSERT INTO stock(stock_name,stock_artist,stock_type,stock_manager,new_or_old,stock_count,rent)
+VALUES ("POP@VIRUS","¯–ìŒ¹","CD"," ","Vì",10,1);
+INSERT INTO stock(stock_name,stock_artist,stock_type,stock_manager,new_or_old,stock_count,rent)
+VALUES ("forme(DVD•t)","‚x‚t‚j‚h","CD"," ","Vì",10,2);
+INSERT INTO stock(stock_name,stock_artist,stock_type,stock_manager,new_or_old,stock_count,rent)
+VALUES ("UDSDADiAj(DVD•t)","‚c‚` ‚o‚t‚l‚o","CD"," ","Vì",10,3);
+INSERT INTO stock(stock_name,stock_artist,stock_type,stock_manager,new_or_old,stock_count,rent)
+VALUES ("UDSDADiBj(DVD•t)","‚c‚` ‚o‚t‚l‚o","CD"," ","Vì",10,4);
+INSERT INTO stock(stock_name,stock_artist,stock_type,stock_manager,new_or_old,stock_count,rent)
+VALUES ("»Œv","—V•","CD"," ","Vì",10,5);
+INSERT INTO stock(stock_name,stock_artist,stock_type,stock_manager,new_or_old,stock_count,rent)
+VALUES ("‹â‰Í^‚¢‚Â‚Ü‚Å‚à","‚l‚h‚r‚h‚`","CD"," ","‹Œì",10,6);
+INSERT INTO stock(stock_name,stock_artist,stock_type,stock_manager,new_or_old,stock_count,rent)
+VALUES ("‚Æ‚È‚è‚Ìƒgƒgƒ"," ","DVD","‹{èx","‹Œì",10,5);
+INSERT INTO stock(stock_name,stock_artist,stock_type,stock_manager,new_or_old,stock_count,rent)
+VALUES ("ƒnƒEƒ‹‚Ì“®‚­é"," ","DVD","‹{èx","‹Œì",10,7);
+INSERT INTO stock(stock_name,stock_artist,stock_type,stock_manager,new_or_old,stock_count,rent)
+VALUES ("‚©‚®‚â•P‚Ì•¨Œê"," ","DVD","‚”¨ŒM","‹Œì",10,9);
+INSERT INTO stock(stock_name,stock_artist,stock_type,stock_manager,new_or_old,stock_count,rent)
+VALUES ("ç‚Æçq‚Ì_‰B‚µ"," ","DVD","‹{èx","‹Œì",10,8);
+INSERT INTO stock(stock_name,stock_artist,stock_type,stock_manager,new_or_old,stock_count,rent)
+VALUES ("–‚—‚Ì‘î‹}•Ö"," ","DVD","‹{èx","‹Œì",10,7);
+INSERT INTO stock(stock_name,stock_artist,stock_type,stock_manager,new_or_old,stock_count,rent)
+VALUES ("“V‹ó‚Ìéƒ‰ƒsƒ…ƒ^"," ","DVD","‹{èx","‹Œì",10,1);
+INSERT INTO stock(stock_name,stock_artist,stock_type,stock_manager,new_or_old,stock_count,rent)
+VALUES ("•—‚Ì’J‚ÌƒiƒEƒVƒJ"," ","DVD","‹{èx","‹Œì",10,2);
+INSERT INTO stock(stock_name,stock_artist,stock_type,stock_manager,new_or_old,stock_count,rent)
+VALUES ("ƒƒAƒŠ‚Æ–‚—‚Ì‰Ô"," ","DVD","•Ä—ÑG¹","Vì",10,3);
+INSERT INTO stock(stock_name,stock_artist,stock_type,stock_manager,new_or_old,stock_count,rent)
+VALUES ("ƒpƒ“ƒ_ƒRƒpƒ“ƒ_"," ","DVD","‚”¨ŒM","‹Œì",10,4);
+INSERT INTO stock(stock_name,stock_artist,stock_type,stock_manager,new_or_old,stock_count,rent)
+VALUES ("•½¬’K‡í‚Û‚ñ‚Û‚±"," ","DVD","‚”¨ŒM","‹Œì",10,5);
+INSERT INTO stock(stock_name,stock_artist,stock_type,stock_manager,new_or_old,stock_count,rent)
+VALUES ("ŠR‚Ìã‚Ìƒ|ƒjƒ‡"," ","DVD","‹{èx","‹Œì",10,6);
+INSERT INTO stock(stock_name,stock_artist,stock_type,stock_manager,new_or_old,stock_count,rent)
+VALUES ("ƒQƒhí‹L"," ","DVD","‹{èx","‹Œì",10,6);
+INSERT INTO stock(stock_name,stock_artist,stock_type,stock_manager,new_or_old,stock_count,rent)
+VALUES ("–Ñ’‚Ìƒ{ƒ"," ","DVD","‹{èx","Vì",10,6);
+INSERT INTO stock(stock_name,stock_artist,stock_type,stock_manager,new_or_old,stock_count,rent)
+VALUES ("‚Æ‚È‚è‚Ìƒgƒgƒ"," ","Blu-ray","‹{èx","‹Œì",10,5);
+INSERT INTO stock(stock_name,stock_artist,stock_type,stock_manager,new_or_old,stock_count,rent)
+VALUES ("ƒnƒEƒ‹‚Ì“®‚­é"," ","Blu-ray","‹{èx","‹Œì",10,7);
+INSERT INTO stock(stock_name,stock_artist,stock_type,stock_manager,new_or_old,stock_count,rent)
+VALUES ("‚©‚®‚â•P‚Ì•¨Œê"," ","Blu-ray","‚”¨ŒM","‹Œì",10,9);
+INSERT INTO stock(stock_name,stock_artist,stock_type,stock_manager,new_or_old,stock_count,rent)
+VALUES ("ç‚Æçq‚Ì_‰B‚µ"," ","Blu-ray","‹{èx","‹Œì",10,8);
+INSERT INTO stock(stock_name,stock_artist,stock_type,stock_manager,new_or_old,stock_count,rent)
+VALUES ("–‚—‚Ì‘î‹}•Ö"," ","Blu-ray","‹{èx","‹Œì",10,7);
+INSERT INTO stock(stock_name,stock_artist,stock_type,stock_manager,new_or_old,stock_count,rent)
+VALUES ("“V‹ó‚Ìéƒ‰ƒsƒ…ƒ^"," ","Blu-ray","‹{èx","‹Œì",10,1);
+INSERT INTO stock(stock_name,stock_artist,stock_type,stock_manager,new_or_old,stock_count,rent)
+VALUES ("•—‚Ì’J‚ÌƒiƒEƒVƒJ"," ","Blu-ray","‹{èx","‹Œì",10,2);
+INSERT INTO stock(stock_name,stock_artist,stock_type,stock_manager,new_or_old,stock_count,rent)
+VALUES ("ƒƒAƒŠ‚Æ–‚—‚Ì‰Ô"," ","Blu-ray","•Ä—ÑG¹","Vì",10,3);
+INSERT INTO stock(stock_name,stock_artist,stock_type,stock_manager,new_or_old,stock_count,rent)
+VALUES ("ƒpƒ“ƒ_ƒRƒpƒ“ƒ_"," ","Blu-ray","‚”¨ŒM","‹Œì",10,4);
+INSERT INTO stock(stock_name,stock_artist,stock_type,stock_manager,new_or_old,stock_count,rent)
+VALUES ("•½¬’K‡í‚Û‚ñ‚Û‚±"," ","Blu-ray","‚”¨ŒM","‹Œì",10,5);
+INSERT INTO stock(stock_name,stock_artist,stock_type,stock_manager,new_or_old,stock_count,rent)
+VALUES ("ŠR‚Ìã‚Ìƒ|ƒjƒ‡"," ","Blu-ray","‹{èx","‹Œì",10,6);
+INSERT INTO stock(stock_name,stock_artist,stock_type,stock_manager,new_or_old,stock_count,rent)
+VALUES ("ƒQƒhí‹L"," ","Blu-ray","‹{èx","‹Œì",10,6);
+INSERT INTO stock(stock_name,stock_artist,stock_type,stock_manager,new_or_old,stock_count,rent)
+VALUES ("–Ñ’‚Ìƒ{ƒ"," ","Blu-ray","‹{èx","Vì",10,6);
